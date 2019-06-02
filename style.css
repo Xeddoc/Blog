@@ -93,7 +93,7 @@ body{
 
 		.menutoggle {
 			position: fixed;
-			top: 30px;
+			top: 50px;
 			right: 30px;
 			background: white;
 			padding: 10px;
@@ -153,5 +153,7 @@ body{
 
 				
 		}
-
+.modal-content {
+width: 1000px;
+margin-left: -290px;}
 
