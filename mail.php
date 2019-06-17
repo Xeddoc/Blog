@@ -1,34 +1,20 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Contact</title>
-</head>
-
-<body>
-    <h1>Contact</h1>
-    <form method="post">
-        <label>Email</label>
-        <input type="email" name="email" required><br>
-        <label>Message</label>
-        <textarea name="message" required></textarea><br>
-        <input type="submit">
-    </form>
-    <?php
-    if (isset($_POST['message'])) {
-        $position_arobase = strpos($_POST['email'], '@');
-        if($position_arobase === false)
-            echo '<p>Votre email doit comporter un arobase.</p>';
-        else {
-            $retour=mail('lxedocl@gmail.com','Envoi depuis page Contact', $_POST['message'], 'From : ' . $_POST['email']);
-            if($retour)
-                echo '<p>Votre message a été envoyé.</p>';
-            else
-                echo '<p>Erreur.</p>';
-        }
-    }
-    ?>
-</body>
-
-</html>
+<?php
+$destinataire = $_POST['email'];
+// Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
+$expediteur = 'lxedocl@gmail.com'; 
+$objet = $_POST['Subject']; 
+$headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
+$headers .= 'Content-type: text/html; charset=ISO-8859-1'."\n"; // l'en-tete Content-type pour le format HTML
+$headers .= 'Reply-To: '.$expediteur."\n"; // Mail de reponse
+$headers .= 'From: "Nom_de_expediteur"<'.$expediteur.'>'."\n"; // Expediteur
+$headers .= 'Delivered-to: '.$destinataire."\n"; // Destinataire     
+$message = '<div style="width: 100%; text-align: center; font-weight: bold"> Bonjour'.$_POST['name'].'! \n'.$_POST['message'].'</div>';
+if (mail($destinataire, $objet, $message, $headers)) // Envoi du message
+{
+    echo 'Votre message a bien été envoyé ';
+}
+else // Non envoyé
+{
+    echo "Votre message n'a pas pu être envoyé";
+}
+?>
