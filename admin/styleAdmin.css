@@ -1,0 +1,83 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . ." ". connect connect ." ". connect connect ." ". . . .";
+}
+
+.connect { grid-area: connect;}
+
+a:hover{
+  text-decoration: none;
+  color: grey;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+body{
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom:solid;
+}
+
+ li{
+   float: left ;
+   height: 30px;
+   width: 200px;
+ }
+
+ li:hover{
+   background-color: grey;
+   color:white;
+ }
+
+ div.envoyeur{
+   display: flex;
+   flex-direction:row;
+ }
+
+ .fixe{
+   text-decoration: underline;
+   margin-left: 30px;
+ }
+
+ div.infosMessage{
+   display: flex;
+   flex-direction:row;
+ }
+
+ div.texteMessage{
+   border-bottom:solid;
+   padding-bottom: 10px;
+   border-width: 5px;
+
+ }
+
+div.texteMessage p{
+  width:100%;
+  word-wrap: break-word;
+}
+
+ .pres{
+   display: flex;
+   flex-direction: column;
+   width:20%;
+ }
+
+ .pres textarea{
+   height: 200px;
+ }
+
+.formsPres{
+  display: flex;
+  flex-direction: row;
+}
