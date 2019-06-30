@@ -13,9 +13,9 @@ else{ ?>
 <body>
   <main>
 <div class="grid-container">
-    <?php if(!isset($_SESSION['id'])){
+    <?php
       require_once('backAdmin/connect.php');
-      ?>
+      ?>}
 
       <div class="connect">
         <center><a href='index.php'>Retour accueil</a></center>
@@ -24,7 +24,7 @@ else{ ?>
           <input type="password" name="pwd" placeholder="Mot de passe" required>
           <input type="submit" name="submitConnect" value="Valider">
         </form></center>
-        <?php if(isset($message)){echo($message);} ?>
+        <?php if(isset($message)){echo($message);} ?>}
       </div>
 
 </div>
@@ -32,5 +32,3 @@ else{ ?>
 </body>
 
 </html>
-<?php }}
-?>

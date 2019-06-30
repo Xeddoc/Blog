@@ -20,5 +20,3 @@ if(!isset($_SESSION['id'])) {session_start();}
   </body>
 
   </html>
-<?php  }
-?>
